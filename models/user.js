@@ -1,7 +1,7 @@
 const mongoose  = require("mongoose")
 
 // For hashing the password (to avoid storing password in text format)
-const bcrypt  = require('bcrypt')
+const bcrypt  = require('bcryptjs')
 
 const userSchema = new mongoose.Schema({
     name:{
