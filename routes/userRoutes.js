@@ -55,9 +55,10 @@ router.post('/login',async(req,res)=>{
 // Get the user Profile data
 router.get('/Person', jwtAuthMiddleware, async(req,res)=>{
     try{
-        const userData = req.User
-        const userId = userData.user
-        const user = await user.findById(userId)
+        console.log(req.user)
+        const userId = req.user.id;
+        
+        const user = await ser.findById(userId)
         res.status(200).json({user})
     }
     catch(err){

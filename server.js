@@ -13,7 +13,11 @@ const PORT = process.env.PORT || 3000;
 
 
 const userRoutes = require('./routes/userRoutes')
+const candidateRoutes = require('./routes/candidateRoutes')
 app.use('/User',userRoutes)
+app.use('/Candidate',candidateRoutes)
+
+
 
 
 app.listen(PORT,()=>{

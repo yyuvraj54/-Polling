@@ -1,5 +1,5 @@
 const mongoose  = require("mongoose")
-const candodateSchema = new mongoose.Schema({
+const candidateSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -8,22 +8,6 @@ const candodateSchema = new mongoose.Schema({
         type:Number
     },
     party:{
-        type:String,
-        required:true
-    },
-    email:{
-        type:String,
-        unique:true
-    },
-    address:{
-        type:String,
-    },
-    aadharCardNumber:{
-        type:Number,
-        required:true,
-        unique:true
-    },
-    password:{
         type:String,
         required:true
     },
@@ -36,7 +20,7 @@ const candodateSchema = new mongoose.Schema({
             },
             votedAt:{
                 type:Date,
-                default:Data.now()
+                default:Date.now()
             }
         }
     ],
@@ -48,5 +32,5 @@ const candodateSchema = new mongoose.Schema({
 });
 
 
-const Candodate = mongoose.model('Candodate', candodateSchema);
-module.exports = Candodate;
+const Candidate = mongoose.model('Candidate', candidateSchema);
+module.exports = Candidate;
