@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("./../models/user");
 const {jwtAuthMiddleware,genrateToken} = require("./../jwt")
 
-router.post('/singup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
       const data = req.body;
       const newUser = new User(data);
@@ -55,7 +55,7 @@ router.post('/login',async(req,res)=>{
 // Get the user Profile data
 router.get('/Person', jwtAuthMiddleware, async(req,res)=>{
     try{
-        const userData = req.user
+        const userData = req.User
         const userId = userData.user
         const user = await user.findById(userId)
         res.status(200).json({user})
