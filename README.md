@@ -39,6 +39,41 @@ The Poll Application is a platform where users can cast their votes for a given 
 ## Live Service
 The Poll Application is live and can be accessed at [https://polling-2sce.onrender.com](https://polling-2sce.onrender.com).
 
+### User Authentication Example
+- POST /User/signup : Create a new user account.
+  - **Request Body**:
+    ```json
+    {
+      "name": "rahul",
+      "age": 28,
+      "role": "voter",
+      "mobile": "1122334455",
+      "email": "rahul@example.com",
+      "address": "789 Oak St, Springfield",
+      "aadharCardNumber": 445678901234,
+      "password": "pass",
+      "isVoted": false
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "_id": "generatedObjectId",
+      "name": "rahul",
+      "age": 28,
+      "role": "voter",
+      "mobile": "1122334455",
+      "email": "rahul@example.com",
+      "address": "789 Oak St, Springfield",
+      "aadharCardNumber": 445678901234,
+      "password": "$2a$10$Aalv7p5H/2OpYAQbYx98VOzUCuRoWoAJvm1EDoQbnI/DtowOnJtQa",
+      "isVoted": false,
+      "__v": 0
+    }
+    ```
+- **POST /login**: Log in to an existing account using Aadhar Card number and password.
+
+
 ## How to Run the Application
 1. Clone the repository.
 2. Install the required dependencies using `npm install`.
